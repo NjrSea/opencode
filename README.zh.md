@@ -91,6 +91,20 @@ OPENCODE_INSTALL_DIR=/usr/local/bin curl -fsSL https://opencode.ai/install | bas
 XDG_BIN_DIR=$HOME/.local/bin curl -fsSL https://opencode.ai/install | bash
 ```
 
+### 项目结构
+
+如果你对代码库感兴趣或想参与贡献，以下是主要源码目录：
+
+- `packages/opencode`: OpenCode 核心业务逻辑与服务器
+  - `packages/opencode/src/cli/cmd/tui/`: 终端界面 (TUI) 代码，使用 SolidJS 和 [opentui](https://github.com/sst/opentui) 编写
+- `packages/app`: 共享的 Web UI 组件，使用 SolidJS 编写
+- `packages/desktop`: 原生桌面应用，使用 Tauri 构建（封装 `packages/app`）
+- `packages/plugin`: `@opencode-ai/plugin` 的源代码
+- `packages/ui`: 可复用的 UI 组件库
+- `packages/web`: OpenCode 网站与落地页
+
+更多开发与贡献相关信息请参见 [贡献指南 (CONTRIBUTING.md)](./CONTRIBUTING.md)。
+
 ### Agents
 
 OpenCode 内置两种 Agent，可用 `Tab` 键快速切换：
